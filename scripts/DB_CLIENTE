@@ -1,0 +1,11 @@
+CREATE DATABASE DB_CLIENTE;
+
+USE DB_CLIENTE;
+
+CREATE TABLE `CLIENTES` (
+  `cod_cliente` bigint(20) NOT NULL AUTO_INCREMENT,
+  `nome_cliente` VARCHAR(255) NOT NULL,
+  `cpf` varchar(12),
+  `data_nascimento` DATE,
+  PRIMARY KEY (`cod_cliente`)
+)

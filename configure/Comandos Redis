@@ -1,0 +1,93 @@
+COMANDOS REDIS
+**************
+
+SUBIR IMAGEM REDIS - docker run --name redis -p 6379:6379 -d redis
+
+
+ACESSAR O REDIS - redis-cli -h localhost -p 6379
+****************************
+
+LISTAR CHAVES - KEYS *
+**********************
+
+INSERIR DADOS - HSET estabelicimentocomercial id "10"
+*****************************************************
+
+RETORNAR DADOS PELO ID - HGET estabelicimentocomercial id
+*********************************************************
+
+EXCLUIR DADOS - DEL estabelicimentocomercial
+********************************************
+
+BUSCAR MAIS DE UM VALOR - MGET god1 god2
+****************************************
+
+LIMPAR TUDO - FLUSHALL
+**********************
+
+INSERIR NO INÍCIO DA FILA - LPUSH gods Artemis Diana Apolo
+***********************************************************
+
+INSERIR NO FINAL DA FILA - RPUSH gods Atena Ares dionisio
+**********************************************************
+
+BUSCAR VALORES DA LISTA - LRANGE Merchant 0 -1
+******************************************
+
+
+sudo cp jce_policy-8.zip /usr/java
+
+REDIS:
+
+
+# Estrutura do MAPA -> [key - field - value] where:
+
+	key = nome do mapa, no caso SequencialEncapsularPassagem
+
+	field = chave (ID).
+	value = sequencial.
+
+
+# SOME USEFUL CLI COMMANDS: https://redis.io/commands
+
+		CLEAR - clear the screen
+
+		INFO (Information about redis instance).
+
+		INFO keyspace (Get the information only in the keyspace).
+
+
+		KEYS * 
+
+		HKEYS SequencialEnviarPassagem - Get all keys in a Hash.
+
+		HVALS SequencialEnviarPassagem - Get all values in a Hash.
+		
+		HGET SequencialEnviarPassagem 1 - Get the value of a hash field.
+
+		HGET NumeroPropostaSequencial 1 - Get the value of a hash field.
+		
+		HGETALL SequencialEnviarPassagem - lista o conteudo do Mapa.
+
+	 	FLUSHDB - Remove all keys from current database.
+
+		FLUSHALL - Remove all keys from all databases.
+
+	# Deleting Field(Key)
+
+		HDEL SequencialEnviarTag "1010" 
+
+    # Updating Sequencial Redis
+
+		HSET SequencialEnviarTag "1021" "[\"java.lang.Long\",25]"
+
+HSET stablishment-hashes "98f03d3f6861db0ffdd3c2f9b84f45271f3c7a821ae64013dcef41c0f7804d17b408231e7af53f92bb5339067adb84f785323c46ba2eca0d594ca4da1142f5a8" "2"
+HSET stablishment-hashes "90b10e2d669b1402013986d509680cec509ce716bf77b4fd8417212cdd222899a9fbaef4327bd49e1bc1813154cb5f4554596df40626282f11f992d351637c08" "7" 
+HSET stablishment-hashes "6585bced7ef0f9b00f455334ffbe099a7e9e7c5ab99c2bdba8ef165b1c1d21e07e2311e5f834c78212a811e5be31c7ce2b480256e41204b3a9fba16aeca07ae9" "4" 
+HSET stablishment-hashes "a79bc1b938b98f9b1d8922c9e639b1935a1521a9a3875d2f61e05bf1d0bdf78cae384c44e8bed279a9f7cf8faddd8d2cfeb63a2909cf6223e2566461ad2c6bc3" "5" 
+HSET stablishment-hashes "4bacf5077bfba267d5a9425a0fba56d5ce3b5d338cde1ef3945e6abddcc98b966852708907a99dad3c58de2b026b3436344b3689fa9e8f3e29cf43cd672ab484" "1" 
+HSET stablishment-hashes "d21bd1253ac3883bd5a4b59bc1c5797ec4ebeed982d01e65cd4e3e6ab528265def8a6cd71c722491cd96e81ff3204aa2038c0ccf0491dd3fb6e210239d1da012" "3" 
+HSET stablishment-hashes "2219e6eccd935916b106a22de4a7a3a3e3f88ffac2dbdaffb266d26a7b13bb5f9ef5f2a54dd76fa9de7f3fc4f277e8e7cdec47bc821c2d7de49cdc2fcef02a1c" "6"
+
+
+

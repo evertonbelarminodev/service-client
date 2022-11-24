@@ -1,0 +1,49 @@
+
+docker container run -p 8080:80 nginx
+
+curl http://localhost:8080
+
+docker container run -p8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx
+
+docker container logs ex-daemon-basic
+
+docker container inspect ex-daemon-basic
+
+docker image build -t ex-simple-build .
+
+docker container run -p 80:80 ex-simple-build
+
+docker image build --build-arg S3_BUCKET=myapp -t ex-build-arg .
+
+docker image build -t ex-build-arg .
+
+
+//QUEM É O MANTENEDOR DA IMAGEM
+docker image inspect --format="{{index .Config.Labels \"maintainer\"}}" ex-build-arg
+
+docker container run ex-build-arg bash -c 'echo $S3_BUCKET'
+
+docker container run -it --volumes-from=python-server debian cat /log/http-server.log
+
+docker container run -it -v $(pwd):/app -p 80:8000 --name python-server ex-build-dev
+
+docker container run -d --name container1 alpine sleep 1000
+
+docker container exec -it container1 ifconfig
+
+docker container exec container1 ping 172.17.0.3
+
+docker network inspect rede_nova
+
+docker network connect bridge container3
+
+docker network disconnect bridge container3
+
+docker inspect -f "{{ .NetworkSettings.IPAddress }}"
+
+cat /home/ventron/Documents/Projetos/21_04_2019.sql | docker exec -i mysql /usr/bin/mysql -u root --password=12345 db_uc_kush
+
+
+cat /home/ventron/Documents/Projetos/fk.sql | docker exec -i mysql /usr/bin/mysql -u root --password=12345 db_uc_kush
+
+docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
